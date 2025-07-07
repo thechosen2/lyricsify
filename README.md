@@ -29,7 +29,7 @@ flutter run
 You might need to grant "draw over other apps" permission manually if the app doesn't start the overlay the first time.
 
 ## Notes
-- Currently tested only on Android.
+- Currently only for Android.
 - The app picks up metadata from media player notifications, so it works with most major music apps.
 - Lyrics are fetched from [lrclib.net](lrclib.net)'s api using the artist and title parsed from the notification.
 
