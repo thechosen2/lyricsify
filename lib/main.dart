@@ -115,7 +115,7 @@ class _LyricsAppState extends State<LyricsApp> {
                   ElevatedButton.icon(
                     onPressed: controller.dispose,
                     icon: const Icon(Icons.stop),
-                    label: const Text('Stop & Exit'),
+                    label: const Text('Stop'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
                     ),
