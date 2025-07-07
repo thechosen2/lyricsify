@@ -31,7 +31,7 @@ You might need to grant "draw over other apps" permission manually if the app do
 ## Notes
 - Currently only for Android.
 - The app picks up metadata from media player notifications, so it works with most major music apps.
-- Lyrics are fetched from [lrclib.net](lrclib.net)'s api using the artist and title parsed from the notification.
+- Lyrics are fetched from [lrclib.net](https://lrclib.net)'s api using the artist and title parsed from the notification.
 
 ## Debug Tips
 - If the overlay doesn't show, make sure the overlay permission is granted.
