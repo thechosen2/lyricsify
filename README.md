@@ -38,7 +38,7 @@ You might need to grant "draw over other apps" permission manually if the app do
 - If lyrics don't show up, it's likely a 400 error from the server (either bad parsing or missing lyrics).
 - You can stop the overlay from inside the app using the "Stop" button.
 
-## TODO
+## Todo
 - Add font picker for overlay text
 - Add persistent notification or quick tile to toggle overlay
 - Support manual song entry as fallback
