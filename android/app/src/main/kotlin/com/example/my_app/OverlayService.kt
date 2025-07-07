@@ -60,7 +60,7 @@ class OverlayService : Service() {
         windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
         windowManager?.addView(overlayView, params)
 
-        // 🔄 Register broadcast receiver
+        // Register broadcast receiver
         val filter = IntentFilter("UPDATE_LYRICS")
         registerReceiver(lyricsUpdateReceiver, filter)
 
@@ -84,7 +84,7 @@ class OverlayService : Service() {
             windowManager?.removeView(overlayView)
             Log.d("OverlayService", "Overlay removed from window")
         }
-        // 🚫 Unregister receiver
+        //  Unregister receiver
         unregisterReceiver(lyricsUpdateReceiver)
         Log.d("OverlayService", "BroadcastReceiver unregistered")
     }

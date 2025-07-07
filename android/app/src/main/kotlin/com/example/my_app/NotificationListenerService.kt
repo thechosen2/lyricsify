@@ -17,16 +17,16 @@ class NotificationsListenerService : NotificationListenerService() {
         if (packageName.contains("spotify") || packageName.contains("music")) {
             val extras: Bundle? = sbn.notification.extras
 
-            Log.d("LyricsifyNotif", "📦 Notification from $packageName")
+            Log.d("LyricsifyNotif", "Notification from $packageName")
             extras?.keySet()?.forEach { key ->
-                Log.d("LyricsifyNotif", "🔑 Key: $key => ${extras.get(key)}")
+                Log.d("LyricsifyNotif", "Key: $key => ${extras.get(key)}")
             }
 
             val title = extras?.getCharSequence("android.title")?.toString()
             val text = extras?.getCharSequence("android.text")?.toString()
             val subText = extras?.getCharSequence("android.subText")?.toString()
 
-            Log.d("LyricsifyNotif", "🎵 Extracted: title=$title, text=$text, subText=$subText")
+            Log.d("LyricsifyNotif", "Extracted: title=$title, text=$text, subText=$subText")
 
             if (!title.isNullOrBlank() && !text.isNullOrBlank()) {
                 val data = mapOf(
@@ -36,7 +36,7 @@ class NotificationsListenerService : NotificationListenerService() {
                 )
                 channel?.invokeMethod("onMetadataChanged", data)
             } else {
-                Log.w("LyricsifyNotif", "⚠️ Missing title or text — skipping send.")
+                Log.w("LyricsifyNotif", "Missing title or text — skipping send.")
             }
         }
     }
@@ -44,7 +44,7 @@ class NotificationsListenerService : NotificationListenerService() {
     override fun onNotificationRemoved(sbn: StatusBarNotification) {
         val packageName = sbn.packageName
         if (packageName.contains("spotify") || packageName.contains("music")) {
-            Log.d("LyricsifyNotif", "🛑 Notification removed for $packageName")
+            Log.d("LyricsifyNotif", "Notification removed for $packageName")
             channel?.invokeMethod("onPlaybackStopped", null)
         }
     }

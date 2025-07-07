@@ -5,10 +5,6 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
-    <!-- Do not use this line in the manifest -->
-    <!-- <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/> -->
-    <!-- Instead, set it in the <service> below like you already do -->
-
     <application
         android:label="Lyricsify"
         android:icon="@mipmap/ic_launcher"

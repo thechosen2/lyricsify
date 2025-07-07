@@ -94,9 +94,9 @@ class LyricsController with ChangeNotifier {
       if (progressMs < syncedLyrics[i]['time']) {
         final text = i == 0 ? "" : syncedLyrics[i - 1]['text'];
         if (text != currentLine) {
-          currentLine = text;
+          currentLine = (text == null || text.trim().isEmpty) ? '♫' : text;
           print("[Lyricsify] Showing line: $currentLine");
-          OverlayBridge.updateOverlay(text);
+          OverlayBridge.updateOverlay(currentLine);
         }
         break;
       }
@@ -106,6 +106,19 @@ class LyricsController with ChangeNotifier {
   @override
   void dispose() {
     _timer?.cancel();
+    _channel.setMethodCallHandler(null);
+    _stopOverlayService();
     super.dispose();
   }
+
+  Future<void> _stopOverlayService() async {
+    try {
+      const platform = MethodChannel('overlay_channel');
+      await platform.invokeMethod('stopOverlay');
+      print("[Lyricsify] Overlay service stopped.");
+    } catch (e) {
+      print("[Lyricsify] Failed to stop overlay: $e");
+    }
+  }
+
 }
