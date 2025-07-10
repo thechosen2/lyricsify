@@ -1,6 +1,6 @@
 # Lyricsify (WIP Name)
 
-Simple flutter app that overlays synced lyrics of any music you're playing, for people that don't want to pay a monthly subscription to yet another app. Made so that you can enjoy epic gaming experiences such as [this](https://youtu.be/OIiuG-nLTts), because listening to a song with lyrics on is like watching a movie with subs, even if you don't need it, sometimes you feel better because it's there.
+Flutter app that overlays synced lyrics of any music you're playing, for people that don't want to pay a monthly subscription to yet another app. Made so that you can enjoy epic gaming experiences such as [this](https://youtu.be/OIiuG-nLTts), because listening to a song with lyrics on is like watching a movie with subs, even if you don't need it, sometimes you feel better because it's there.
 
 
 
